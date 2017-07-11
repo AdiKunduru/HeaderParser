@@ -21,7 +21,7 @@ var output = {address: 0, language : "", browser :""};
 
 app.get("/", function(res,req)
 {
-    res.send(output)
+    res.send("Hello World")
 })
 
 app.listen(port);
