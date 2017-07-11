@@ -1,7 +1,7 @@
 
 var express = require("express")
 var http = require("http")
-var app = express()
+var app = express();
 var port = process.env.PORT || 3500;
 var output = {address: 0, language : "", browser :""};
 
@@ -24,10 +24,7 @@ app.get("/", function(res,req)
     res.send(output)
 })
 
-app.listen(port,function()
-{
-  console.log("listening on port 3000")
-});
+app.listen(port);
     
 //});
 //});
