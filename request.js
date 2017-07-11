@@ -17,18 +17,18 @@ if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
 
 output.browser = OSName;
 
-output.language = navigator.language
+output.language = navigator.language;
 
 app.get("/", function(res,req)
 {
     res.send(output)
-
 })
 
 app.listen(port,function()
 {
   console.log("listening on port 3000")
-})
+});
+    
 });
 });
 
