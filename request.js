@@ -5,9 +5,9 @@ var app = express()
 var port = process.env.PORT || 3500;
 var output = {address: 0, language : "", browser :""};
 
-http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
-resp.on('data', function(ip) {
-output.address = ip;
+//http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
+//resp.on('data', function(ip) {
+//output.address = ip;
 
 //var OSName = "Unknown OS";
 //if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
@@ -21,7 +21,7 @@ output.address = ip;
 
 app.get("/", function(res,req)
 {
-    res.send("Hello World")
+    res.send(output)
 })
 
 app.listen(port,function()
@@ -29,8 +29,8 @@ app.listen(port,function()
   console.log("listening on port 3000")
 });
     
-});
-});
+//});
+//});
 
 
 
