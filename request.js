@@ -21,7 +21,7 @@ output.language = navigator.language;
 
 app.get("/", function(res,req)
 {
-    res.send(output)
+    res.send("Hello World")
 })
 
 app.listen(port,function()
