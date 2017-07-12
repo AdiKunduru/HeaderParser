@@ -9,7 +9,7 @@ app.get("/", function(req,res)
 {
     output.address = req.ip;
     output.language = req.headers['accept-language'];
-    output.browser = req.address['user-agent'];
+    output.browser = req.headers['user-agent'];
     res.send("Hello");
   
 
