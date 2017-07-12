@@ -10,7 +10,7 @@ app.get("/", function(req,res)
     output.address = req.ip;
     output.langs = req.headers['accept-language'];
     output.browser = req.headers['user-agent'];
-    res.send(output);
+    res.json(output);
   
 
 })
