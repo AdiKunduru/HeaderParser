@@ -19,7 +19,7 @@ var port = process.env.PORT || 3500;
 
 //output.language = navigator.language;
 
-app.get("/", function(res,req)
+app.get("/", function(req,res)
 {
     res.send("Hello World")
 })
