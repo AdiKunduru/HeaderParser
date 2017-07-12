@@ -1,9 +1,9 @@
 
 var express = require("express")
-var http = require("http")
+//var http = require("http")
 var app = express();
 var port = process.env.PORT || 3500;
-var output = {address: 0, language : "", browser :""};
+//var output = {address: 0, language : "", browser :""};
 
 //http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
 //resp.on('data', function(ip) {
