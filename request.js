@@ -11,7 +11,7 @@ app.get("/", function(req,res)
     output.language = req.headers['accept-language'];
     output.browser = req.address['user-agent'];
     res.send("Hello");
-  /
+  
 
 })
 
