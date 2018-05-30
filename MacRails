@@ -42,23 +42,23 @@ log_info "Installing Homebrew Services"
   brew tap gapple/services
 
 log_info "Installing Postgres, a good open source relational database ..."
-  brew install postgres --no-python
+  brew reinstall postgres --no-python
 
 log_info "Starting Postgres ..."
-  brew services start postgres
+  brew services restart postgres
 
 log_info "Installing Redis, a good key-value database ..."
-  brew install redis
+  brew reinstall redis
 
 log_info "Starting Redis ..."
-  brew services start redis
+  brew services restart redis
 
 log_info "Installing and linking ImageMagick, to crop and resize images ..."
-  brew install imagemagick@6
-  brew link imagemagick@6 --force
+  brew reinstall imagemagick@6
+  brew unlink imagemagick@6 && brew link imagemagick@6 --force
 
 log_info "Installing rbenv, to change Ruby versions ..."
-  brew install rbenv
+  brew reinstall rbenv
 
   if ! grep -qs "rbenv init" ~/.bash_profile; then
     printf '\n# load rbenv\n' >> ~/.bash_profile
@@ -72,19 +72,19 @@ log_info "Installing rbenv, to change Ruby versions ..."
   export PATH="$HOME/.rbenv/bin:$PATH"
 
 log_info "Installing ruby-build, to install Rubies ..."
-  brew install ruby-build
+  brew reinstall ruby-build
 
 log_info "Upgrading and linking OpenSSL ..."
-  brew install openssl
+  brew reinstall openssl
   brew link openssl --force
 
 log_info "Installing image libs ..."
-  brew install advancecomp gifsicle jhead jpegoptim jpeg optipng pngcrush pngquant
+  brew reinstall advancecomp gifsicle jhead jpegoptim jpeg optipng pngcrush pngquant
 
 ruby_version="2.4.1"
 
 log_info "Installing Ruby $ruby_version ..."
-  rbenv install "$ruby_version"
+  rbenv reinstall "$ruby_version"
 
 log_info "Setting $ruby_version as global default Ruby ..."
   rbenv global "$ruby_version"
